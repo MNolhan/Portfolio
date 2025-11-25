@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Jersey+15&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #151515;
+  color: #e5e5e5;
+  font-family: 'Jersey 15', sans-serif;
+}
+
+.header {
+  width: 100%;
+  background-color: #151515;
+  padding: 25px 0; 
+  box-sizing: border-box;
+  border-bottom: 1px solid #1b1b1b;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 150px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.logo {
+  font-family: "Jersey 15", sans-serif;
+  font-size: 32px;
+  color: #ffffff;
+}
+
+.logo-red {
+  color: #ff3b2f;
+}
+
+.right-section {
+  display: flex;
+  align-items: center;
+  gap: 40px; 
+}
+
+.nav-links {
+  display: flex;
+  gap: 30px;
+  font-family: "Jersey 15", sans-serif;
+  font-size: 20px;
+}
+
+.nav-links a {
+  color: #e5e5e5;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.nav-links a:hover {
+  color: #ff3b2f;
+}
+
+.signup {
+  font-family: "Jersey 15", sans-serif;
+  font-size: 20px;
+  padding: 10px 28px;
+  border: 2px solid #ff3b2f;
+  background-color: #ff3b2f20;
+  border-radius: 999px;
+  color: #ffffff;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.signup:hover {
+  background-color: #ff3b2f40;
+  transform: scale(1.05);
+}
