@@ -28,10 +28,10 @@ router.delete("/", async (req, res) => {
 
         const payload = jwt.verify(token, process.env.jwtKey);
 
-        await pool.query("DELETE FROM users WHERE id = ?", [payload.userId]);
+        await pool.query("DELETE FROM users WHERE id = ?", [payload.userId]);   
 
         res.status(200);
-        res.json({ message: "Compte supprimé avec succès" });
+        res.json({ message: "Compte supprimé avec succès", logout: true });
         
     } catch (err) {
 
