@@ -8,16 +8,16 @@ configDotenv();
 
 const router = express.Router();
 
-const dbConfig = {
+const pool = mysql.createPool({
     host: process.env.DB_HOST,
     user: process.env.DB_USER,
     password: process.env.DB_PASSWORD,
     database: process.env.DB_NAME,
-};
+});
 
 const userSchema = z.object({
     name : z.string().min(1),
-    fistname : z.string().min(1),
+    firstname : z.string().min(1),
     email : z.string().email(),
     password : z.string().min(6),
 });
@@ -32,8 +32,8 @@ router.post("/", async (req, res) => {
         const hashpassword = await bcrypt.hash(password, 10);
 
         const [result] = await pool.query(
-            "INSERT INTO users (name, prenom, email, password) VALUES (?, ?, ?, ?)",
-            [data.name, data.prenom, data.email, hashpassword]
+            "INSERT INTO users (name, firstname, email, password) VALUES (?, ?, ?, ?)",
+            [data.name, data.firstname, data.email, hashpassword]
         );
 
         res.status(201);
