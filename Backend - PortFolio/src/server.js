@@ -5,6 +5,7 @@ import dotenv from 'dotenv';
 import CreateUser from './routes/users/CreateUser.js';
 import LoginUser from './routes/users/LoginUser.js';
 import ReadUser from './routes/users/ReadUser.js';
+import DeleteUser from './routes/users/DeleteUser.js';
 
 // Route Projects
 
@@ -17,6 +18,7 @@ app.use(express.json());
 app.use('/SignUP', CreateUser);
 app.use('/SignIN', LoginUser);
 app.use('/Profil', ReadUser);
+app.use('/DeleteAccount', DeleteUser);
 
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
