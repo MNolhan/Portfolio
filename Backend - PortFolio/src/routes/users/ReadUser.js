@@ -1,8 +1,8 @@
 import express from "express";
 import mysql from "mysql2/promise";
 import jwt from "jsonwebtoken";
-import bcrypt from "bcrypt";
 import { configDotenv } from 'dotenv';
+import auth from "../../middlewares/auth.js";
 
 configDotenv();
 
@@ -15,7 +15,7 @@ const pool = mysql.createPool({
     database: process.env.DB_NAME,
 });
 
-router.get("/:id", async (req, res) => {
+router.get("/:id", auth, async (req, res) => {
 
     try {
 

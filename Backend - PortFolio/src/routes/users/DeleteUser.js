@@ -2,6 +2,7 @@ import express from "express";
 import mysql from "mysql2/promise";
 import jwt from "jsonwebtoken";
 import { configDotenv } from 'dotenv';
+import auth from "../../middlewares/auth.js";
 
 configDotenv();
 
@@ -14,7 +15,7 @@ const pool = mysql.createPool({
     database: process.env.DB_NAME,
 });
 
-router.delete("/", async (req, res) => {
+router.delete("/", auth, async (req, res) => {
 
     try {
 

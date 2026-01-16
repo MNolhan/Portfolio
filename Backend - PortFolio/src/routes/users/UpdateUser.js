@@ -4,6 +4,7 @@ import jwt from "jsonwebtoken";
 import bcrypt from "bcrypt";
 import { z } from "zod";
 import { configDotenv } from 'dotenv';
+import auth from "../../middlewares/auth.js";
 
 configDotenv();
 
@@ -21,7 +22,7 @@ const MdpSchema = z.object({
     newpassword: z.string().min(6)
 });
 
-router.patch("/", async (req, res) => {
+router.patch("/", auth, async (req, res) => {
 
     try {
 
