@@ -11,5 +11,14 @@ services:
     volumes:
       - mysql_portfolio:/var/lib/mysql
 
+  redis:
+    image: redis:7
+    container_name: portfolio-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_portfolio:/data
+
 volumes:
   mysql_portfolio:
+  redis_portfolio:
