@@ -1,5 +1,6 @@
 import express from 'express';
 import dotenv from 'dotenv';
+import { ensureRedisConnected } from "./infra/RedisClient.js"; 
 
 // Routes Users
 import CreateUser from './routes/users/CreateUser.js';
@@ -11,6 +12,7 @@ import UpdateUser from './routes/users/UpdateUser.js';
 // Route Projects
 
 dotenv.config();
+await ensureRedisConnected();
 
 const app = express();
 const PORT = process.env.PORT;
