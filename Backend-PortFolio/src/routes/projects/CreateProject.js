@@ -20,13 +20,16 @@ export const projectSchema = z.object({
 
 router.post('/', auth, async (req, res) => {
 
-    const data = projectSchema.safeParse(req.body);
+    const resultParsed = projectSchema.safeParse(req.body);
 
-    if (!data.success) {
-        return res.status(400).json({ error : data.error });
+    if (!resultParsed.success) {
+        return res.status(400).json({ error : resultParsed.error });
     }
 
+    const data = resultParsed.data;
+
     try {
+
 
         const col = await getProjectsCollection();
         const result = await col.insertOne({
