@@ -1,7 +1,7 @@
 import express from 'express';
 import { z } from 'zod';
 import { getProjectsCollection } from '../../infra/MongoDB.js';
-import auth from '../../middlewares/Auth.js';
+import auth from '../../middlewares/auth.js';
 
 const router = express.Router();
 

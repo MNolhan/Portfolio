@@ -1,5 +1,5 @@
 import express from "express";
-import auth from "../../middlewares/Auth.js";
+import auth from "../../middlewares/auth.js";
 import { getProjectsCollection } from "../../infra/MongoDB.js";
 import { ObjectId } from "mongodb";
 
