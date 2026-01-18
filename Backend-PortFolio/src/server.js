@@ -13,6 +13,7 @@ import UpdateUser from './routes/users/UpdateUser.js';
 import CreateProject from './routes/projects/CreateProject.js';
 import ReadProject from './routes/projects/ReadProject.js';
 import DeleteProject from './routes/projects/DeleteProject.js';
+import UpdateProject from './routes/projects/UpdateProject.js';
 
 dotenv.config();
 await ensureRedisConnected();
@@ -33,6 +34,7 @@ app.use('/UpdatePwd', UpdateUser);
 app.use('/CreateProject', CreateProject);
 app.use('/Projects', ReadProject);
 app.use('/Projects', DeleteProject);
+app.use('/UpdateProject', UpdateProject);
 
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
