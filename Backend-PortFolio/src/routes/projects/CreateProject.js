@@ -29,9 +29,8 @@ router.post('/', auth, async (req, res) => {
     const data = resultParsed.data;
 
     try {
-
-
         const col = await getProjectsCollection();
+
         const result = await col.insertOne({
             title : data.title,
             shortdescription : data.shortdescription,

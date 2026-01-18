@@ -5,7 +5,6 @@ export default function auth(req, res, next) {
 
     try {
         const authHeader = req.headers.authorization;
-    
         const token = authHeader.slice(7);
 
         try {

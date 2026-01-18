@@ -28,7 +28,7 @@ router.post("/", async (req, res) => {
 
     try {
 
-        const { name, prenom, email, password } = userSchema.parse(req.body);
+        const { name, firstname, email, password } = userSchema.parse(req.body);
         const hashpassword = await bcrypt.hash(password, 10);
 
         const [result] = await pool.query(
